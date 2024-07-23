@@ -1,0 +1,9 @@
+[submodule "escw-example"]
+	path = escw-example
+	url = https://github.com/khose-ie/escw-example.git
+[submodule "escw-mcu"]
+	path = escw-mcu
+	url = https://github.com/khose-ie/escw-mcu.git
+[submodule "escw-mcu-stm32"]
+	path = escw-mcu-stm32
+	url = https://github.com/khose-ie/escw-mcu-stm32.git
