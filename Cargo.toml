@@ -1,0 +1,3 @@
+[workspace]
+members = ["escw-example/escw-example-app", "escw-mcu", "escw-mcu-stm32"]
+resolver = "2"

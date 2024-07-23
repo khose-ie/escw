@@ -1,0 +1,57 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build",
+			"command": "make",
+			"args": [],
+			"options": {
+				"cwd": "${workspaceFolder}/escw-example"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Compiler: arm-none-eabi-gcc"
+		},
+		{
+			"type": "shell",
+			"label": "Clean",
+			"command": "make",
+			"args": [
+				"clean"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/escw-example"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Compiler: arm-none-eabi-gcc"
+		},
+		{
+			"type": "shell",
+			"label": "Download",
+			"command": "openocd",
+			"args": [
+				"-f",
+				"escw-example/escw-example-stm32/cmsis-dap.cfg",
+				"-f",
+				"escw-example/escw-example-stm32/stm32f4x.cfg",
+				"-c",
+				"program escw-example/escw-example-stm32/build/escw-example-stm32.bin 0x08000000 verify reset exit"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"dependsOn": "Build",
+			"group": "build",
+			"detail": "Programmer: openocd"
+		}
+	]
+}
